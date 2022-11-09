@@ -46,7 +46,14 @@
   <main>
     <section class="section hero">
       <h1 class="hero-title">Ефективні рішення для <br> вашого бізнесу</h1>  
-      <button type="button" class="order-button">Замовити послугу</button>
+      <button data-modal-open type="button" class="order-button">Замовити послугу</button>
+      <p></p>
+      <div  data-modal class="backdrop is-hidden">
+      <div class="modal">
+      <p></p>
+        <button data-modal-close type="button" class="close"></button>
+      </div>
+    </div>
     </section>
     <!--Company Credo Section-->
     <section class="section-credo">
@@ -516,5 +523,6 @@
       </div>
     </div> 
   </footer>
+  <script src="./js/modal.js"></script>
 </body>
 </html>

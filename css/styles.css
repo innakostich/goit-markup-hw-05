@@ -125,6 +125,7 @@ list-style: none;
 .site-nav-list .link:focus
 {
   color: var(--accent-color);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
  
 }
 .site-nav-list .current{
@@ -173,7 +174,7 @@ list-style: none;
 .contacts-list .link:focus 
 {
   color: var(--accent-color) ;
-  
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-icon{
   fill: currentColor;
@@ -230,12 +231,48 @@ list-style: none;
 .order-button:focus {
   color:var(--contacts-text-color) ;
   background-color: #188CE8;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-button:active{
   color: #188CE8;
   
 }
-
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  }
+ .modal{ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 581px;
+  min-width: 528px;
+  background-color: var(--contacts-text-color);
+  } 
+  
+ 
+  .backdrop.is-hidden{
+    opacity: 0;
+    pointer-events: none;  
+  }
+  .close{
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0;
+    border: none;
+    margin-top: 8px;
+    margin-right: 8px;
+    background-color: transparent; 
+    background-image: url(../images/close.svg);   
+  }
 /*Company Credo Section*/
 .features-list{
   list-style: none;
@@ -418,6 +455,7 @@ padding-bottom: 30px;
 .socials-link:focus {
   background-color: var(--accent-color);
   color: var(--contacts-text-color) ;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .socials-icon{
   fill:currentColor;
