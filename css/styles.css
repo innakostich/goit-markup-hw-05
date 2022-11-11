@@ -12,6 +12,9 @@
   --accent-color: #2196F3;
   --secondary-background-color:#2F303A;
   --secondary-accent-color: #000000;
+
+  --anim-fast: 300ms ease-in-out;
+  --anim-slow: 800ms ease;
 }
 /*Reset Start*/
 h1,h2, h3, h4, h5, h6, p{
@@ -245,9 +248,19 @@ list-style: none;
   min-height: 581px;
   min-width: 528px;
   background-color: var(--contacts-text-color);
-  } 
-  
  
+  animation: swirl-in-fwd 0.6s both ease-out;
+}
+@keyframes swirl-in-fwd {
+  0% {
+    transform: translate(-50%, -50%) rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
   .backdrop.is-hidden{
     opacity: 0;
     pointer-events: none;
@@ -262,7 +275,8 @@ list-style: none;
     margin-right: 8px;
     background-color: transparent; 
     background-image: url(../images/close.svg); 
-    cursor: pointer;  
+    cursor: pointer; 
+
   }
 /*Company Credo Section*/
 .features-list{
@@ -463,47 +477,37 @@ padding-bottom: 30px;
   text-align: center;
   margin-bottom: 50px;
 }
-.clients-list{
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-.clients-item:not(:last-child) {
-  margin-right: 27px;
-}
-.client-list .clients-item{
-  width: calc((100% - 170px) / 6);
-}
- .clients-item{
-  border: solid 1px #AFB1B8 ;
-  border-radius: 4px; 
 
-}
-
- .clients-card:hover,
- .clients-card:focus{
-  border: 1px solid var(--accent-color);
-  color: var(--accent-color);
-  border-radius: 4px; 
-}
-
-
-.clients-card{
-  display: block;
-  content: '';
-  width: 170px;
-  height: 92px;
-  background-size: contain;
+.clients-box {
   display: flex;
   justify-content: center;
+}
+
+
+.clients-box > .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+
+.clients-box .link {
+  display: flex;
   align-items: center;
-  color:#AFB1B8 ;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) , border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  fill: #AFB1B8;
+  border: 1px solid #AFB1B8;
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-client{
-  fill: currentColor;
+
+
+.clients-box .link:hover,
+.clients-box .link:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
+
 
 /*Footer Contacts*/
 
@@ -614,7 +618,7 @@ h4 {
 
 .filter-list :not(:last-child) {
   margin-right: 8px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) , color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .filter-list .button:hover,
@@ -638,7 +642,7 @@ h4 {
    display: inline-block;
    min-width: 73px;
    padding: 7px 23px;
-   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) , color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
