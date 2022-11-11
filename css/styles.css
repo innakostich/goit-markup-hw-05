@@ -248,19 +248,9 @@ list-style: none;
   min-height: 581px;
   min-width: 528px;
   background-color: var(--contacts-text-color);
- 
-  animation: swirl-in-fwd 0.6s both ease-out;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-@keyframes swirl-in-fwd {
-  0% {
-    transform: translate(-50%, -50%) rotate(-540deg) scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(0) scale(1);
-    opacity: 1;
-  }
-}
+
   .backdrop.is-hidden{
     opacity: 0;
     pointer-events: none;
